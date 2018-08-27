@@ -1,10 +1,18 @@
 import { Component } from '@angular/core';
 
+import { routes } from './app.routing';
+
 @Component({
-  selector: 'app-root',
+  selector: '#vmo',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  items = [];
+
+  constructor() {
+    this.items = routes;
+
+    window['CorporateUi'].baseComponents();
+  }
 }
